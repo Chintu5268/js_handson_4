@@ -210,10 +210,25 @@ const isAllPass = (N, Arr) =>
   i.e, color of shirt is 0,1,2, … , N</h3>      
 
 <pre>
-function Unique_Shirts (arr,N) {
 
- 
-}
+  function Unique_Shirts (arr,N) {
+    count = 0;
+    temp = 0;
+    for(let i=0; i< N;i++){
+      count = 0
+      for(j=0; j < N; j++){
+        if(arr[i] = = = arr [j]){
+          count += 1
+        }
+      }
+      if(count = = = 1){
+        temp += 1
+      }
+    }
+    return temp
+    }
+    
+    
 </pre>
 <h2>Min and Max</h2>
 <h3>Congratulations on making up to this question. Let us give you a fairly simple array problem to solve. If you know how to iterate through the array, you will easily be able to solve this.
@@ -248,25 +263,17 @@ function Unique_Shirts (arr,N) {
   You must determine how many ways she can divide the chocolate</h3>
    <pre>
  
-    
-function Birthday_Game(arr,D ,M) {
- 
-  let count=0;
-  for(let i=0; i< =arr.length-M; i++){
-    let sum =0;
-    for(let j=i; j< m+i; j++){
-      sum = sum+arr[j];
-    }
-    if(sum===D){
-      count++;
-      
-    }
-  }
-  return count;
-  }
-  
-  
-       
+    function Birthday_Game(arr,D ,M) {
+      let count=0;
+      for(let i=0; i<arr.length; i++){
+       const sequc = arr.slice(i,i+M)
+       const sum = sequc.reduce((a,b) => a+b,0)
+       if(sum ===D ){
+         count +=1
+       }
+      }
+        return count
+      }    
    </pre>
 </body>
 
